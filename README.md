@@ -1,0 +1,15 @@
+## Reflection on Software Development
+
+### 1. **How can I ensure that my code, program, or software is functional and secure?**
+
+To ensure that my code is functional, I rely on a combination of thorough **unit testing** and **manual testing**. Unit tests allow me to verify that each function performs as expected in isolation, handling both normal and edge cases. For example, I tested invalid inputs like duplicate IDs and incorrect data formats to ensure the software responds appropriately. Additionally, I make sure to handle **exceptions** and **error cases**, such as throwing appropriate errors for invalid input or when a task or contact doesn’t exist. To enhance security, I follow best practices like **input validation** to prevent issues such as SQL injection or data corruption. For example, ensuring that user inputs (such as phone numbers or IDs) follow strict format rules prevents malicious input from being processed. Regular **code reviews** and using tools like **static analysis** also help identify potential vulnerabilities in my code early on.
+
+### 2. **How do I interpret user needs and incorporate them into a program?**
+
+Interpreting user needs begins with understanding the problem domain and the core requirements of the application. In the case of this project, the primary users needed a system for managing contacts, tasks, and appointments. By reviewing the requirements and identifying key features such as adding, updating, and deleting records, I structured the application accordingly. I also ensured that the software handled user input validation to prevent common errors. To incorporate these needs, I made sure to focus on clarity and simplicity in the user interface (if applicable) and error handling. For example, if a user enters an invalid phone number or task name, the system will provide clear feedback, ensuring that the user understands how to fix the issue. I also consider edge cases and input restrictions that might not be immediately obvious but are necessary for maintaining data integrity.
+
+### 3. **How do I approach designing software?**
+
+When designing software, I take a **modular approach**, breaking down the problem into smaller, manageable pieces. For this project, I designed separate classes for each entity—contacts, tasks, and appointments—each with its own service class to handle the business logic. This separation of concerns allows the system to remain **scalable** and **maintainable**. I start with defining the key features and functionalities required, then map out how each part of the program will interact. I also consider future flexibility in the design by leaving room for potential features like sorting or advanced search capabilities. To ensure the design is effective, I also use **test-driven development** (TDD) when possible, writing tests for each feature before or during the implementation process. This ensures that the software is not only functional but also robust and easy to debug as I work through the design.
+
+Through this approach, I ensure that my designs meet user needs while also being maintainable, scalable, and secure.
