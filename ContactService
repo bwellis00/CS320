@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class ContactService {
+    private List<Contact> contactList = new ArrayList<>();
+
+    // Add a contact
+    public void addContact(Contact contact) {
+        // Check for duplicate contact ID
+        for (Contact existingContact : contactList) {
+            if (existingContact.getContactId().equals(contact.getContactId())) {
+                throw new IllegalArgumentException("Contact ID already exists.");
+            }
+        }
+        contactList.add(contact);
+    }
+
+    // Delete a contact by ID
+    public void deleteContact(String contactId) {
+        Contact contactToDelete = null;
+        for (Contact contact : contactList) {
+            if (contact.getContactId().equals(contactId)) {
+                contactToDelete = contact;
+                break;
+            }
+        }
+        if (contactToDelete == null) {
+            throw new IllegalArgumentException("Contact ID not found.");
+        }
+        contactList.remove(contactToDelete);
+    }
+
+    // Update a contact's fields by ID
+    public void updateContact(String contactId, String firstName, String lastName, String phone, String address) {
+        Contact contact = null;
+        for (Contact c : contactList) {
+            if (c.getContactId().equals(contactId)) {
+                contact = c;
+                break;
+            }
+        }
+        if (contact == null) {
+            throw new IllegalArgumentException("Contact ID not found.");
+        }
+        if (firstName != null) contact.setFirstName(firstName);
+        if (lastName != null) contact.setLastName(lastName);
+        if (phone != null) contact.setPhone(phone);
+        if (address != null) contact.setAddress(address);
+    }
+
+    // Get contact by ID
+    public Contact getContact(String contactId) {
+        for (Contact contact : contactList) {
+            if (contact.getContactId().equals(contactId)) {
+                return contact;
+            }
+        }
+        return null; // Contact not found
+    }
+}
